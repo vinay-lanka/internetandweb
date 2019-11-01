@@ -1,0 +1,32 @@
+<html>
+    <body>
+        <form method="POST" action="/login/signin">
+            Username:<br>
+            <input type="text" name="email" value="xyz@123.com" required>
+            <br>
+            Password: <br>
+            <input type="password" name="password" value="Mouse" required>
+            <br><br>
+            <input type="submit" value="Login">
+        </form> 
+        <form method="POST" action="/login/signup">
+            Full Name:<br>
+            <input type="text" name="fullname" value="xyz123" required>
+            <br>
+            Email:<br>
+            <input type="email" name="email" value="xyz@gmail.com" required>
+            <br>
+            Password: <br>
+            <input type="password" name="password" value="Mouse" required>
+            <br><br>
+            <label ><b>Gender</b></label>
+        <br>
+        <input type="radio" name="gender" value="male" required> Male<br>
+        <input type="radio" name="gender" value="female" required> Female<br>
+        <input type="radio" name="gender" value="other" required> Other<br><br>
+        <input type="date" name="dob" required>
+        <br>
+        <input type="submit" value="SignUp">
+        </form> 
+    </body>
+</html>
