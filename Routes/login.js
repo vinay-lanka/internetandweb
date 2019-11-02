@@ -29,11 +29,10 @@ router.get('/', (req,res)=>{
 router.post('/signin',(req,res)=>{
     // console.log(req.body);
     // res.sendFile('/public/pages/index.html', {'root': './'}); 
-    var emailid = req.body.email;            //Login details
-	var password = req.body.password;
-    if (emailid && password) {
+    const {email, password} = req.body;
+    if (email && password) {
         var promise = new Promise((resolve,reject)=>{
-            connection.query('SELECT * FROM users WHERE emailid = ?', [emailid],(err,res)=>{      //Checking for corresponding encrypted password in db
+            connection.query('SELECT * FROM users WHERE email = ?', [email],(err,res)=>{      //Checking for corresponding encrypted password in db
                 if (err){
                     console.log(err);
                     reject(err);                                //Error checking db
@@ -60,7 +59,7 @@ router.post('/signin',(req,res)=>{
                 decryptedpass = decrypt(encryptedpassword);     //Decrypt the encrypted password from db
                 if(decryptedpass == password){                  //Compare the passwords
                     req.session.loggedin = true;
-                    req.session.email = emailid;
+                    req.session.email = email;
                     // res.session.data = result;
                     res.cookie('userdata', result);                        
                     res.redirect('/dashboard');                        
