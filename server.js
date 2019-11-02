@@ -25,12 +25,22 @@ app.get('/', (req,res)=>{
 
 app.get('/logout', (req,res)=>{                         //Logout route. Clears cookies and resets session variables and redirects to '/'
     req.session.loggedin = false;
-    res.clearCookie('userdata'); 
-    res.clearCookie('macdata');
+    res.clearCookie('userdata');
     res.redirect('/');
+    console.log("called");
+
+    // var promise = new Promise((resolve,reject)=>{
+    //     req.session.loggedin = false;
+    //     res.clearCookie('userdata');
+    // });
+    // promise.then((result)=>{
+    //     console.log("called");
+    //     res.redirect('/');
+    // });
 });
 
 app.use('/login', require('./Routes/login'));
 app.use('/dashboard', require('./Routes/dashboard'));
+app.use('/userdetails', require('./Routes/userdetails'));
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

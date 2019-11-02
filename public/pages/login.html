@@ -1,32 +1,88 @@
 <html>
-    <body>
-        <form method="POST" action="/login/signin">
-            Username:<br>
-            <input type="text" name="email" value="xyz@123.com" required>
-            <br>
-            Password: <br>
-            <input type="password" name="password" value="Mouse" required>
-            <br><br>
-            <input type="submit" value="Login">
-        </form> 
-        <form method="POST" action="/login/signup">
-            Full Name:<br>
-            <input type="text" name="fullname" value="xyz123" required>
-            <br>
-            Email:<br>
-            <input type="email" name="email" value="xyz@gmail.com" required>
-            <br>
-            Password: <br>
-            <input type="password" name="password" value="Mouse" required>
-            <br><br>
-            <label ><b>Gender</b></label>
-        <br>
-        <input type="radio" name="gender" value="male" required> Male<br>
-        <input type="radio" name="gender" value="female" required> Female<br>
-        <input type="radio" name="gender" value="other" required> Other<br><br>
-        <input type="date" name="dob" required>
-        <br>
-        <input type="submit" value="SignUp">
-        </form> 
-    </body>
+
+<head>
+    <title>IRCTC Next-Gen Ticketing System</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+
+<body>
+    <!-- Image and text -->
+    <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img src="../assets/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        IRCTC Ticketing System
+    </a>
+    </nav>
+    <div class="wrapper fadeInDown">
+            <div id="formContent">
+              <!-- Tabs Titles -->
+              <h2 class="active"> Sign In </h2>
+                <br>
+              <!-- Icon -->
+              <div class="fadeIn first">
+              </div>
+          
+              <!-- Login Form -->
+              <form method="POST" action="/login/signin">
+                <input type="text" id="login" class="fadeIn second" name="email" placeholder="username">
+                <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
+                <br><br>
+                <input type="submit" class="fadeIn fourth" value="Log In">
+              </form>
+          
+              <!-- Remind Passowrd -->
+              <div id="formFooter">
+                <a class="underlineHover" data-toggle="modal" data-target="#exampleModalCenter">New User? Sign Up?</a>
+              </div>
+          
+            </div>
+          </div>
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Sign Up</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <center>
+                <form method="POST" action="/login/signup">
+                    Full Name:<br>
+                    <input type="text" name="fullname" placeholder="xyz123" required>
+                    <br>
+                    Email:<br>
+                    <input type="email" name="email" placeholder="xyz@gmail.com" required>
+                    <br>
+                    Password: <br>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <br><br>
+                    <label><b>Gender</b></label>
+                    <br>
+                    <input type="radio" name="gender" value="male" required> Male<br>
+                    <input type="radio" name="gender" value="female" required> Female<br>
+                    <input type="radio" name="gender" value="other" required> Other<br><br>
+                    <input type="date" name="dob" required>
+                    <br><br>
+                    <input type="submit" value="SignUp">
+                </form>
+            </center>
+            </div>
+          </div>
+        </div>
+      </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
 </html>

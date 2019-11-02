@@ -60,6 +60,7 @@ router.post('/signin',(req,res)=>{
                 decryptedpass = decrypt(encryptedpassword);     //Decrypt the encrypted password from db
                 if(decryptedpass == password){                  //Compare the passwords
                     req.session.loggedin = true;
+                    req.session.email = emailid;
                     // res.session.data = result;
                     res.cookie('userdata', result);                        
                     res.redirect('/dashboard');                        
@@ -92,6 +93,7 @@ router.post('/signup', (req,res)=>{
             }else{
                 req.session.loggedin = true;
                 // res.session.data = data;
+                req.session.email = data.email;
                 res.cookie('userdata', data);
                 res.redirect('/dashboard');
             }
